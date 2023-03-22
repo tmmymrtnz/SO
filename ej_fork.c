@@ -32,8 +32,8 @@ int main(){
     if (fork() != 0){
         //parent
             printf("despues del fork (padre)\n");
-      waitpid(-1, &status, 0);
-            printf("despues del waitpid\n")
+             waitpid(-1, &status, 0);
+            printf("despues del waitpid\n");
     }
     else{
       //child
@@ -41,8 +41,8 @@ int main(){
             //execve(cmd, params, 0);
             //params es arreglo de strings que termina con NULL
             char *const parmList[] = {"/bin/ls", NULL};
-            execve("/bin/ls", paramList, 0);
-            printf("despues del execve\n") //esto nunca se ejecuta!!!!!!
+            execve("/bin/ls", parmList, 0);
+            printf("despues del execve\n"); //esto nunca se ejecuta!!!!!!
     }
         return 0;
 }
